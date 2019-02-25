@@ -1,16 +1,8 @@
-module "vpc" {
-  name = "${var.vpc_name}"
-  cidr = "${var.vpc_cidr}"
-
-  azs             = "${var.azs}"
-  private_subnets = "${var.private_subnets}"
-  public_subnets  = "${var.public_subnets}"
-
-  enable_nat_gateway = true
-  enable_vpn_gateway = true
+resource "aws_vpc" "main" {
+  cidr_block       = "10.0.0.0/16"
+  instance_tenancy = "dedicated"
 
   tags = {
-    Terraform = "true"
-    Environment = "${var.environment_name}"
+    Name = "main"
   }
 }
