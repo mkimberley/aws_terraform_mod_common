@@ -1,9 +1,9 @@
-resource "aws_vpc" "${vpc_name}" {
-  cidr_block       = "${vpc_cidr}"
-  instance_tenancy = "${vpc_tenancy}"
+resource "aws_vpc" "${var.vpc_name}" {
+  cidr_block       = "${var.vpc_cidr}"
+  instance_tenancy = "${var.vpc_tenancy}"
 
   tags = {
-    Name = "${vpc_name}"
-    Environment = "${vpc_environment}"
+    Name = "${var.vpc_name}"
+    Environment = "${var.vpc_environment}"
   }
 }
