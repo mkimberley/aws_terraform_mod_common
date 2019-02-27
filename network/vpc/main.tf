@@ -1,4 +1,4 @@
-resource "aws_vpc" "${var.vpc_name}" {
+resource "aws_vpc" "this" {
   cidr_block       = "${var.vpc_cidr}"
   instance_tenancy = "${var.vpc_tenancy}"
 
