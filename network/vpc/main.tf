@@ -1,8 +1,9 @@
-resource "aws_vpc" "main" {
-  cidr_block       = "10.0.0.0/16"
-  instance_tenancy = "dedicated"
+resource "aws_vpc" "${vpc_name}" {
+  cidr_block       = "${vpc_cidr}"
+  instance_tenancy = "${vpc_tenancy}"
 
   tags = {
-    Name = "main"
+    Name = "${vpc_name}"
+    Environment = "${vpc_environment}"
   }
 }
