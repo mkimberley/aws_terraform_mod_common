@@ -10,11 +10,11 @@ output "vpc_cidr-block" {
     description "The VPC CIDR block"
     value = "${aws_vpc.this.cidr_block}"
 }
-output "vpc_instance_tenancy" {
+output "vpc_instance-tenancy" {
     description "The VPC tenancy"
     value = "${aws_vpc.this.instance_tenancy}"
 }
-output "vpc_dns_support" {
+output "vpc_dns-support" {
     description "Whethe or not The VPC has DNS hostname support"
     value = "${aws_vpc.this.enable_dns_support}"
 }
