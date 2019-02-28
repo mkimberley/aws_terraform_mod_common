@@ -9,5 +9,5 @@ variable "vpc_tenancy" {
 }
 
 variable "vpc_environment" {
-    default "production"
+    default = "production"
 }
