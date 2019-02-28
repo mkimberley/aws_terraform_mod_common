@@ -35,10 +35,6 @@ output "vpc_default-net-acl" {
     description = "The ID of the network ACL create by default"
     value = "${aws_vpc.this.default_network_acl_id}"
 }
-output "vpc_default-net-acl" {
-    description = "The ID of the network ACL create by default"
-    value = "${aws_vpc.this.default_network_acl_id}"
-}
 output "vpc_default-sec-group" {
     description = "The ID of the security group created by default"
     value = "${aws_vpc.this.default_security_group_id}"
