@@ -22,10 +22,10 @@ output "vpc_dns-hostnames" {
     description = "Whether or not the VPC has hostname support"
     value = "${aws_vpc.this.enable_dns_hostnames}"
 }
-output "vpc_classiclink" {
-    description = "Whether or not the VPC has classiclink enabled"
-    value = "${aws_vpc.this.enable_classiclink}"
-}
+#output "vpc_classiclink" {
+#    description = "Whether or not the VPC has classiclink enabled"
+#    value = "${aws_vpc.this.enable_classiclink}"
+#}
 
 output "vpc_route-table" {
     description = "The ID of the main route table associated with the VPC"
