@@ -20,7 +20,10 @@ variable "vpc_enable_dns_support" {
     default = true
 }
 variable "vpc_primary_subnet" {
-    default = "10.0.0.0/8"
+    default = "10.60.0.0/24"
+}
+variable "vpc_secondary_subnet" {
+    default = "10.61.0.0/24"
 }
 variable "vpc_tags" {
     default = {}
