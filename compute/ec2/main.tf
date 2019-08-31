@@ -21,8 +21,14 @@ module "tag" {
   ec2Schedule         = "${var.ec2Schedule}" 
 }
 
+
+module "ami_search" {
+  source              = "../../aws/ami"
+  found_ami           = "${var.ami_id}"
+}
+
 resource "aws_instance" "${var.ec2_instance_name}" {
-  ami                 = "${var.ami_id}"
+  ami                 = "${ami_search.found_ami}"
   instance_type       = "${var.instance_type}"
 
   tags = {
