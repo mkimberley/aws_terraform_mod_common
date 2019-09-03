@@ -1,16 +1,27 @@
-resource "aws_network_interface" "${var.iteface_name}" {
-  subnet_id             = "${aws_subnet.}"
-  security_groups       = ["${aws_security_group.web.id}"]
 
-  attachment {
-    instance            = "${aws_instance.test.id}"
-    device_index        = 1
-  }
+resource "aws_network_interface" "management_interface" {
+  subnet_id            = "${aws_subnet.id}"
+  security_groups      = ["${aws_security_group.web.id}"]
+
+  attachment           = "${aws_network_interface_attachment.management_interface.id}"
 }
 
 resource "aws_network_interface_attachment" "data_interface" {
-  instance_id          = "${aws_instance."${var.ec2_instance_name}".id}"
-  network_interface_id = "${aws_network_interface.test.id}"
+  instance_id          = "${aws_instance.this.id}"
+  network_interface_id = "${aws_network_interface.data.id}"
+  device_index         = 0
+}
+
+resource "aws_network_interface" "data_interface" {
+  subnet_id            = "${aws_subnet.id}"
+  security_groups      = ["${aws_security_group.web.id}"]
+
+  attachment           = "${aws_network_interface_attachment.data_interface.id}"
+}
+
+resource "aws_network_interface_attachment" "data_interface" {
+  instance_id          = "${aws_instance.this.id}"
+  network_interface_id = "${aws_network_interface.data.id}"
   device_index         = 0
 }
 
@@ -27,7 +38,7 @@ module "ami_search" {
   found_ami           = "${var.ami_id}"
 }
 
-resource "aws_instance" "${var.ec2_instance_name}" {
+resource "aws_instance" "this" {
   ami                 = "${ami_search.found_ami}"
   instance_type       = "${var.instance_type}"
 
