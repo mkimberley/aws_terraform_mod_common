@@ -1,5 +1,5 @@
 variable "ec2_instance_name" {
-    default "ec2_instance_default"
+    default = "ec2_instance_default"
 }
 variable "instance_type" {
     default = "t2.micro"
@@ -8,16 +8,12 @@ variable "Environment" {
     default = "Production"
 }
 variable "subnet_id" {
-    default =""
+    default = ""
 }
 variable "description" {
-    default "EC2 Instance"
+    default = "EC2 Instance"
 }
-variable "private_ips" {}
-variable "private_ips_count" {}
-variable "security_groups" {}
-variable "attachment" {}
-variable "source_dest_check" {}
-variable "tags" {}
-variable "instance" {}
-variable "device_index" {}
+
+variable "ami_name" {
+  default = "ami-0a0cb6c7bcb2e4c51"
+}

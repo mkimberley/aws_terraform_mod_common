@@ -1,6 +1,6 @@
 
 resource "aws_network_interface" "management_interface" {
-  subnet_id            = "${aws_subnet.id}"
+  subnet_id            = "${lookup(module.remotestate-map.subnetid, "Management")}"
   security_groups      = ["${aws_security_group.web.id}"]
 
   attachment           = "${aws_network_interface_attachment.management_interface.id}"
@@ -35,7 +35,7 @@ module "tag" {
 
 module "ami_search" {
   source              = "../../aws/ami"
-  found_ami           = "${var.ami_id}"
+  found_ami           = "${var.ami_name}"
 }
 
 resource "aws_instance" "this" {
