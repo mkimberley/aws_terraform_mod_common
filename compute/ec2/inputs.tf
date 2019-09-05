@@ -1,26 +1,26 @@
 variable "ec2_instance_name" {
-    default "ec2_instance_default"
+    default = "ec2_instance_default"
 }
-
-variable "ami_id" {}
-
 variable "instance_type" {
     default = "t2.micro"
 }
-variable "Environment" {
-    default = "Production"
+variable "ec2_instance_environment" {
+    default = "Development"
 }
-variable "subnet_id" {
-    default =""
+variable "ec2_instance_schedule" {
+    default = "always_on"
+}
+variable "subnet_name" {
+    default ="Front End"
 }
 variable "description" {
-    default "EC2 Instance"
+    default = "EC2 Instance"
 }
-variable "private_ips" {}
-variable "private_ips_count" {}
-variable "security_groups" {}
-variable "attachment" {}
-variable "source_dest_check" {}
-variable "tags" {}
-variable "instance" {}
-variable "device_index" {}
+variable "ami_name" {
+  default = "ami-0d8e27447ec2c8410"
+}
+
+variable "security_group_data" {
+    default = []
+  
+}

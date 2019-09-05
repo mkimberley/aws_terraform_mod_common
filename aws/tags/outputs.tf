@@ -1,4 +1,3 @@
-output "ami_id" {
-    description = "Returns the ID of the latest AMI found"
-    value = "${aws_ami.this.id}"
+output "all_tags" {
+    value = "${local.all_tags}"
 }

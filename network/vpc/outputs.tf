@@ -55,3 +55,9 @@ output "vpc_owner-id" {
     description = "VPC owner ID"
     value = "${aws_vpc.this.owner_id}"
 }
+output "primary_subnets" {
+    value = ["${module.aws_subnet.Primary.id}"]
+}
+output "secondary_subnets" {
+    value = "${aws_subnet.Secondary.id}"
+}

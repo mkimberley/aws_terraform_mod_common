@@ -19,10 +19,10 @@ variable "vpc_enable_dns_hostnames" {
 variable "vpc_enable_dns_support" {
     default = true
 }
-variable "vpc_primary_subnet" {
+variable "vpc_primary_cidr" {
     default = "10.60.0.0/24"
 }
-variable "vpc_secondary_subnet" {
+variable "vpc_secondary_cidr" {
     default = "10.61.0.0/24"
 }
 variable "vpc_tags" {
