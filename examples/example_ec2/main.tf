@@ -1,3 +1,4 @@
+
 module "ec2_instance" {
     source = "../ec2/"
 
@@ -6,7 +7,6 @@ module "ec2_instance" {
     environment             = "${var.environment}"
     description             = "${var.description}"
     ami_name                = "${var.ami_name}"
-    subnet_name             = "${var.subnet_name}"
-
+    subnet_name             = "${var.subnet_name}""
 
 }
