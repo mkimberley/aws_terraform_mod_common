@@ -13,7 +13,7 @@ resource "aws_vpc_ipv4_cidrblock_association" "secondary_cidr"{
 
 module "primary_subnet" {
   source = "../subnet/"
-
+ 
   sub_vpc_id
   sub_az
   tags
