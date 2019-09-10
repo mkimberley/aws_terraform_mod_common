@@ -28,3 +28,8 @@ variable "vpc_secondary_cidr" {
 variable "vpc_tags" {
     default = {}
 }
+variable "primary_az" {
+    default = {
+        default = ""
+    }
+}
