@@ -38,3 +38,9 @@ variable "vpc_primary_subnet_name" {
 variable "vpc_secondary_subnet_name" {
     default = "VPC Secondary Subnet"
 }
+variable "vpc_secondary_public_ip_on_lauch" {
+    default = "false"
+}
+variable "vpc_primary_public_ip_on_lauch" {
+    default = "false"
+}
