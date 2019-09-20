@@ -29,6 +29,7 @@ variable "vpc_secondary_az" {
     default = "euw2-az2"
 }
 variable "vpc_tags" {
+    type = "map"
     default = {}
 }
 variable "vpc_primary_subnet_name" {

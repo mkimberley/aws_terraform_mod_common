@@ -27,5 +27,6 @@ variable "sub_name" {
     default = "Subnet"
 }
 variable "sub_tags" {
-    default = []
+    type = "map"
+    default = {}
 }
