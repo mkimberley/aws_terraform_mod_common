@@ -7,22 +7,21 @@ resource "aws_vpc" "this" {
 }
 
 module "primary_subnet" {
-  source          = "../subnet/"
-  sub_vpc_id      = "${aws_vpc.this.id}"
-  sub_environment = "${var.vpc_environment}"
-  sub_cidr_block  = "${var.vpc_primary_cidr}"
-  sub_az          = "${var.vpc_primary_az}"
-  sub_name        = "${var.vpc_primary_subnet_name}"
+  source                        = "../subnet/"
+  sub_vpc_id                    = "${aws_vpc.this.id}"
+  sub_environment               = "${var.vpc_environment}"
+  sub_cidr_block                = "${var.vpc_primary_cidr}"
+  sub_az                        = "${var.vpc_primary_az}"
+  sub_name                      = "${var.vpc_primary_subnet_name}"
 }
 
 module "secondary_subnet" {
-  source          = "../subnet/"
-  sub_vpc_id      = "${aws_vpc.this.id}"
-  sub_environment = "${var.vpc_environment}"
-  sub_cidr_block  = "${var.vpc_secondary_cidr}"
-  sub_az          = "${var.vpc_secondary_az}"
-  sub_name        = "${var.vpc_secondary_subnet_name}"
-
+  source                        = "../subnet/"
+  sub_vpc_id                    = "${aws_vpc.this.id}"
+  sub_environment               = "${var.vpc_environment}"
+  sub_cidr_block                = "${var.vpc_secondary_cidr}"
+  sub_az                        = "${var.vpc_secondary_az}"
+  sub_name                      = "${var.vpc_secondary_subnet_name}"
 }
 
 

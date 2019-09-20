@@ -17,7 +17,7 @@ variable "description" {
     default = "EC2 Instance"
 }
 variable "ami_name" {
-  default = "ami-0d8e27447ec2c8410"
+  default = "ubuntu-1804"
 }
 
 variable "security_group_data" {
