@@ -55,5 +55,6 @@ output "primary_subnet_map" {
     value = ["${module.primary_subnet.sub_id}"]
 }
 output "secondary_subnet_map" {
-    value = "${map("${module.secondary_subnet.subnet_name}","${module.secondary_subnet.sub_id}")}
+    type = "map"
+    value = ["${module.secondary_subnet.subnet_name}","${module.secondary_subnet.sub_id}"]
 }
