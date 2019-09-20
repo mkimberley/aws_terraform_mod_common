@@ -10,16 +10,21 @@ resource "aws_vpc" "this" {
 module "primary_subnet" {
   source          = "../subnet/"
   sub_vpc_id      = "${aws_vpc.this.id}"
-  sub_az          = ""
-  tags            = ""
+  sub_environment = "${var.vpc_environment}"
+  sub_cidr_block  = "${var.vpc_primary_cidr}"
+  sub_az          = "${var.primary_az}"
+  sub_tags        = "${var.vpc_tags}"
 }
 
 module "secondary_subnet" {
   source          = "../subnet/"
   sub_vpc_id      = "${aws_vpc.this.id}"
-  sub_az          = ""
-  tags            = ""
+  sub_environment = "${var.vpc_environment}"
+  sub_cidr_block  = "${var.vpc_secondary_cidr}"
+  sub_az          = "${var.vpc_secondary_az}"
+  sub_tags        = "${var.vpc_tags}"
 }
+
 
 resource "aws_vpc_ipv4_cidrblock_association" "primary_cidr"{
   vpc_id                        = "${aws_vpc.this.id}"

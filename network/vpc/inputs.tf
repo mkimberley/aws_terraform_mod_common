@@ -25,6 +25,12 @@ variable "vpc_primary_cidr" {
 variable "vpc_secondary_cidr" {
     default = "10.61.0.0/24"
 }
+variable "vpc_primary_az" {
+    default = "euw2-az1"
+}
+variable "vpc_secondary_az" {
+    default = "euw2-az2"
+}
 variable "vpc_tags" {
     default = {}
 }

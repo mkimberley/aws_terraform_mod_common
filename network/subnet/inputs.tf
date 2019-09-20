@@ -5,6 +5,7 @@ variable "sub_az" {
 
 variable "sub_cidr_block" {
     description = "Subnet CIDR block"
+    default = "0.0.0.0/16"
 }
 
 variable "sub_public_ip_on_launch" {
@@ -24,4 +25,7 @@ variable "sub_environment" {
 variable "sub_name" {
     description = "Subnet name"
     default = "Subnet"
+}
+variable "sub_tags" {
+    default = []
 }

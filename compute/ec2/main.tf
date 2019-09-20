@@ -5,6 +5,7 @@ provider "aws" {
 }
 module "remotestate-map" {
   source "../../remotestate-map"
+  
 }
 resource "aws_network_interface" "management_interface" {
   subnet_id            = "${lookup(module.remotestate-map.subnetid, "Management")}"
