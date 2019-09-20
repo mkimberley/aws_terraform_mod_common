@@ -4,9 +4,6 @@ variable "vpc_name" {
 variable "vpc_cidr" {
     default = "10.0.0.0/8"
 }
-variable "vpc_tenancy" {
-    default = "default"
-}
 variable "vpc_environment" {
     default = "production"
 }
@@ -33,11 +30,6 @@ variable "vpc_secondary_az" {
 }
 variable "vpc_tags" {
     default = {}
-}
-variable "primary_az" {
-    default = {
-        default = ""
-    }
 }
 variable "vpc_primary_subnet_name" {
     default = "VPC Primary Subnet"

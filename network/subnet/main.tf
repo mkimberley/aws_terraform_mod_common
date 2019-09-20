@@ -1,5 +1,6 @@
 locals {
-  tags = "${map("Name", "${var.sub_name}",
+  tags = "${map(
+    "Name", "${var.sub_name}",
     "environent","${var.sub_environment}"
   )}"
 }
