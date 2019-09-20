@@ -9,6 +9,6 @@ output "sub_arn" {
 }
 
 output "subnet_name" {
-    variable = "${var.sub_name}"
+    value = "${var.sub_name}"
     description = "Name and Tag Name for the Subnet"
 }
