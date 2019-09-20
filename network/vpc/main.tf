@@ -14,6 +14,7 @@ module "primary_subnet" {
   sub_cidr_block  = "${var.vpc_primary_cidr}"
   sub_az          = "${var.primary_az}"
   sub_tags        = "${var.vpc_tags}"
+  sub_name        = "${var.vpc_primary_subnet_name}"
 }
 
 module "secondary_subnet" {
@@ -23,6 +24,8 @@ module "secondary_subnet" {
   sub_cidr_block  = "${var.vpc_secondary_cidr}"
   sub_az          = "${var.vpc_secondary_az}"
   sub_tags        = "${var.vpc_tags}"
+  sub_name        = "${var.vpc_secondary_subnet_name}"
+
 }
 
 

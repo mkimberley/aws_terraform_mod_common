@@ -39,3 +39,9 @@ variable "primary_az" {
         default = ""
     }
 }
+variable "vpc_primary_subnet_name" {
+    default = "VPC Primary Subnet"
+}
+variable "vpc_secondary_subnet_name" {
+    default = "VPC Secondary Subnet"
+}

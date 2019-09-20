@@ -19,7 +19,7 @@ variable "sub_vpc_id" {
 
 variable "sub_environment" {
     description = "Environment tag"
-    default = "production"
+    default = "development"
 }
 
 variable "sub_name" {
