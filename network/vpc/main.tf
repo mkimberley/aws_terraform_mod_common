@@ -26,11 +26,11 @@ module "secondary_subnet" {
 }
 
 
-resource "aws_vpc_ipv4_cidrblock_association" "primary_cidr"{
+resource "aws_vpc_ipv4_cidrblock_association" "primary_cidr" {
   vpc_id                        = "${aws_vpc.this.id}"
   cidr_block                    = "${var.vpc_secondary_cidr}"
 }
-resource "aws_vpc_ipv4_cidrblock_association" "secondary_cidr"{
+resource "aws_vpc_ipv4_cidrblock_association" "secondary_cidr" {
   vpc_id                        = "${aws_vpc.this.id}"
   cidr_block                    = "${var.vpc_secondary_cidr}"
 }
