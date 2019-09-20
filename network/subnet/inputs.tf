@@ -23,5 +23,5 @@ variable "sub_environment" {
 
 variable "sub_name" {
     description = "Subnet name"
-    defaut = "Subnet"
+    default = "Subnet"
 }
