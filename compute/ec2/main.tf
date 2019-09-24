@@ -1,8 +1,3 @@
-
-provider "aws" {
-  region = "eu-west-2"
-  
-}
 module "remotestate-map" {
   source                = "../../remotestate-map"
   subnet_search         = "${var.ec2_subnet_name}"
