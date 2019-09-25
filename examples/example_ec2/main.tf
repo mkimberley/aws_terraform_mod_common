@@ -7,6 +7,6 @@ module "ec2_instance" {
     ec2_instance_environment               = "${var.environment}"
     description                            = "${var.description}"
     ami_name                               = "${var.ami_name}"
-    subnet_name                            = "${var.subnet_name}"
+    ec2_subnet_name                        = "${var.ec2_subnet_name}"
 
 }
