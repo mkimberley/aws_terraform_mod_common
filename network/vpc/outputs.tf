@@ -57,3 +57,7 @@ output "primary_subnet_map" {
 output "secondary_subnet_map" {
     value = ["${module.secondary_subnet.sub_id}"]
 }
+
+output "vpc_id" {
+    value = "${aws_vpc.this.vpc_id}"
+}
