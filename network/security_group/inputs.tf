@@ -28,3 +28,7 @@ variable "secgrp_revoke_rules_on_delete" {
 variable "secgrp_environment" {
     default = "production"
 }
+
+variable "security_group_rule_definition" {
+    default = []
+}
