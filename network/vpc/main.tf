@@ -11,9 +11,6 @@ resource "aws_route_table" "this" {
   vpc_id                        = "${aws_vpc.this.id}"
 }
 
-resource "aws_route_table_association" "this" {
-  
-}
 
 
 module "primary_subnet" {
@@ -37,5 +34,14 @@ module "secondary_subnet" {
 }
 
 
+resource "aws_route_table_association" "primary" {
+  count                         = "${length(var.vpc_primary_cidr)}"
+  subnet_id                     = "${module.primary_subnet.subnet_id}"
+  route_table_id                = "${aws_route_table.this.id}"
+}
 
-
+resource "aws_route_table_association" "secondary" {
+  count                         = "${length(var.vpc_secondary_cidr)}"
+  subnet_id                     = "${module.secondary_subnet.subnet_id}"
+  route_table_id                = "${aws_route_table.this.id}"
+}
