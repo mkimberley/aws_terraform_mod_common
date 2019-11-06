@@ -1,7 +1,3 @@
-output "vpc_id" {
-    description = "The VPC ID"
-    value = "${aws_vpc.this.id}"
-}
 output "vpc_arn" {
     description = "The VPC arn"
     value = "${aws_vpc.this.arn}"

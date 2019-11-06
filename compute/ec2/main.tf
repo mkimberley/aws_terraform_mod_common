@@ -21,23 +21,24 @@ data "terraform_remote_state" "vpc" {
 #  source                = "../../remotestate-map"
 #  subnet_search         = "${var.ec2_subnet_name}"
 #}
-
+module "tag" {
+  source                = "../../aws/tags"
+}
 resource "aws_network_interface" "network_interface" {
-  subnet_id            = "${lookup(data.terraform_remote_state.vpc.*.primary_subnets_map, "${var.ec2_subnet_name}")}"
+  subnet_id            = "${lookup(data.terraform_remote_state.*.vpc.primary_subnets_map, "${var.ec2_subnet_name}")}"
   security_groups      = "${var.security_group_data}"
-  attachment           = "${aws_network_interface_attachment.data_interface.id}"
 }
 
-resource "aws_network_interface_attachment" "data_interface" {
+resource "aws_network_interface_attachment" "network_interface_attachment" {
   instance_id          = "${aws_instance.this.id}"
-  network_interface_id = "${aws_network_interface.data_interface.id}"
+  network_interface_id = "${aws_network_interface.network_interface.id}"
   device_index         = 0
 }
 
 
 module "ami_search" {
   source              = "../../aws/ami"
-  ami_name           = "${var.ami_name}"
+  ami_name            = "${var.ami_name}"
 }
 
 resource "aws_instance" "this" {
