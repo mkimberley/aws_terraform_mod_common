@@ -26,7 +26,7 @@ module "tag" {
 }
 resource "aws_network_interface" "network_interface" {
   #subnet_id            = "${lookup(data.terraform_remote_state.*.vpc.primary_subnets_map, "${var.ec2_subnet_name}")}"
-  subnet_id            = "${data.terraform_remote_state.*.vpc.public_subnets_map.id}"
+  subnet_id            = "${flatten(element(data.terraform_remote_state.vpc.outputs.private_subnets, 0))}"
   security_groups      = "${var.security_group_data}"
 }
 
@@ -39,7 +39,7 @@ resource "aws_network_interface_attachment" "network_interface_attachment" {
 
 module "ami_search" {
   source              = "../../aws/ami"
-  ami_name            = "${var.ami_name}"
+  ami_search_name            = "${var.ami_search_name}"
 }
 
 resource "aws_instance" "this" {

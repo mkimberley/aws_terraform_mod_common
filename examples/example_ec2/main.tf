@@ -9,7 +9,7 @@ module "ec2_instance" {
   instance_type            = "${var.instance_type}"
   ec2_instance_environment = "${var.environment}"
   description              = "${var.description}"
-  ami_name                 = "${var.ami_name}"
+  ami_search_name          = "${var.ami_name}"
   ec2_subnet_name          = "${var.ec2_subnet_name}"
 
 }

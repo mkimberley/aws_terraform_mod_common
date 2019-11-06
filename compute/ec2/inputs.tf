@@ -16,8 +16,8 @@ variable "ec2_subnet_name" {
 variable "description" {
     default = "EC2 Instance"
 }
-variable "ami_name" {
-  default = "ubuntu-1804"
+variable "ami_search_name" {
+  default = ""
 }
 
 variable "security_group_data" {
