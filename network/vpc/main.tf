@@ -6,10 +6,10 @@ resource "aws_vpc" "this" {
   tags                          = "${var.vpc_tags}"
 }
 
-resource "aws_route_table" "this" {
-  count                         = "${length(var.route_table_definition)}"
-  vpc_id                        = "${aws_vpc.this.id}"
-}
+#resource "aws_route_table" "this" {
+#  count                         = "${length(var.route_table_definition)}"
+#  vpc_id                        = "${aws_vpc.this.id}"
+#}
 
 
 
