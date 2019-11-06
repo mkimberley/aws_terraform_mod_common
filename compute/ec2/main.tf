@@ -23,11 +23,9 @@ data "terraform_remote_state" "vpc" {
 #}
 
 resource "aws_network_interface" "network_interface" {
-  subnet_id            = "${lookup(data.terraform_remote_state.primary_subnets_map, "${var.ec2_subnet_name}")}"
-  #subnet_id            = "${data.terraform_remote_state.vpc.primary_subnet_map}"
+  subnet_id            = "${lookup(data.terraform_remote_state.vpc.*.primary_subnets_map, "${var.ec2_subnet_name}")}"
   security_groups      = "${var.security_group_data}"
-
-  attachment           = "${aws_network_interface_attachment.management_interface.id}"
+  attachment           = "${aws_network_interface_attachment.data_interface.id}"
 }
 
 resource "aws_network_interface_attachment" "data_interface" {
