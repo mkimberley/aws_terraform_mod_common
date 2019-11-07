@@ -1,6 +1,3 @@
-variable "secgrp_name" {
-    default = "default_secgrp_name"
-}
 variable "secgrp_name_prefix" {
     default = "default_secgrp_name_prefix"
 }
@@ -15,9 +12,6 @@ variable "secgrp_ingress" {
 }
 variable "secgrp_egress" {
     default = "default_secgrp_egress"
-}
-variable "secgrp_revoke_rules_on_delete" {
-    default = "default_secgrp_revoke_rules_on_delete"
 }
 variable "secgrp_vpc_id" {
     default = "default"

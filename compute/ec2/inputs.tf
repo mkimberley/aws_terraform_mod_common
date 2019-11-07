@@ -20,7 +20,7 @@ variable "ami_search_name" {
   default = ""
 }
 
-variable "security_group_data" {
+variable "security_group_rules" {
     default = []
   
 }

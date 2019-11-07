@@ -8,12 +8,4 @@ variable "aws_key" {
 variable "aws_region" {
     default = "eu-west-2"
 }
-data "terraform_remote_state" "vpc" {
-    backend = "s3"
-    config = {
-        bucket  = "${var.aws_bucket}"
-        key     = "${var.aws_key}"
-        region  = "${var.aws_region}"
-    }
-}
 

@@ -1,7 +1,7 @@
 resource "aws_security_group" "this" {
-  name        = "${var.secgrp_name}"
-  description = "${var.secgrp_description}"
-  vpc_id      = "${aws_vpc.main.id}"
+  name                        = "${var.secgrp_name}"
+  description                 = "${var.secgrp_description}"
+  vpc_id                      = "${aws_vpc.main.id}"
 }
 
 resource "aws_security_group_rule" "this" {

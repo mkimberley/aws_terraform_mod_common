@@ -11,6 +11,5 @@ module "ec2_instance" {
   description              = "${var.description}"
   ami_search_name          = "${var.ami_name}"
   ec2_subnet_name          = "${var.ec2_subnet_name}"
-  security_group_data      = "${var.security_group_data}"
-
+  security_group_rules     = "${var.security_group_rules}"
 }

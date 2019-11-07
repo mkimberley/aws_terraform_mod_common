@@ -4,3 +4,4 @@ variable "environment" {}
 variable "ec2_subnet_name" {}
 variable "description" {}
 variable "ami_name" {}
+variable "security_group_rules" {}

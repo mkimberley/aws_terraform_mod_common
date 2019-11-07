@@ -5,14 +5,10 @@ resource "aws_vpc" "this" {
   enable_dns_hostnames          = "${var.vpc_enable_dns_hostnames}"
   tags                          = "${var.vpc_tags}"
 }
-
 #resource "aws_route_table" "this" {
 #  count                         = "${length(var.route_table_definition)}"
 #  vpc_id                        = "${aws_vpc.this.id}"
 #}
-
-
-
 module "primary_subnet" {
   source                        = "../subnet/"
   sub_vpc_id                    = "${aws_vpc.this.id}"
@@ -32,14 +28,11 @@ module "secondary_subnet" {
   sub_name                      = "${var.vpc_secondary_subnet_name}"
   sub_public_ip_on_launch       = "${var.vpc_secondary_public_ip_on_lauch}"
 }
-
-
 #resource "aws_route_table_association" "primary" {
 #  count                         = "${length(var.vpc_primary_cidr)}"
 #  subnet_id                     = "${module.primary_subnet.subnet_id}"
 #  route_table_id                = "${aws_route_table.this.id}"
 #}
-
 #resource "aws_route_table_association" "secondary" {
 #  count                         = "${length(var.vpc_secondary_cidr)}"
 #  subnet_id                     = "${module.secondary_subnet.subnet_id}"

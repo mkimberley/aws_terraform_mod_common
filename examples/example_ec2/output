@@ -1,0 +1,182 @@
+[0m[1mRefreshing Terraform state in-memory prior to plan...[0m
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+[0m
+[0m[1mmodule.ec2_instance.data.terraform_remote_state.vpc: Refreshing state...[0m
+[0m[1mmodule.generic_vpc.aws_vpc.this: Refreshing state... [id=vpc-0a4cf6f78bfa9bee4][0m
+[0m[1mmodule.generic_vpc.module.primary_subnet.aws_subnet.this: Refreshing state... [id=subnet-04bb34261e49dfe32][0m
+[0m[1mmodule.generic_vpc.module.secondary_subnet.aws_subnet.this: Refreshing state... [id=subnet-01b2a7b3c4c8ff2bf][0m
+[0m[1mmodule.ec2_instance.module.ami_search.data.aws_ami.search[0]: Refreshing state...[0m
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create
+  [31m-[0m destroy
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.ec2_instance.aws_instance.this[0m will be created[0m[0m
+[0m[32m  +[0m [0mresource "aws_instance" "this" {
+      [32m+[0m [0m[1m[0mami[0m[0m                          = "ami-083e0e924e8034636"
+      [32m+[0m [0m[1m[0marn[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0massociate_public_ip_address[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcpu_core_count[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mcpu_threads_per_core[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mget_password_data[0m[0m            = false
+      [32m+[0m [0m[1m[0mhost_id[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0minstance_state[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0minstance_type[0m[0m                = "t2.small"
+      [32m+[0m [0m[1m[0mipv6_address_count[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_addresses[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mkey_name[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpassword_data[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mplacement_group[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mprimary_network_interface_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_dns[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0msecurity_groups[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0msource_dest_check[0m[0m            = true
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                         = {
+          [32m+[0m [0m"instance_environment" = "Development"
+          [32m+[0m [0m"instance_name"        = "default_ec2_instance"
+          [32m+[0m [0m"instance_schedule"    = "Always On"
+        }
+      [32m+[0m [0m[1m[0mtenancy[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mvolume_tags[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_security_group_ids[0m[0m       = (known after apply)
+
+      [32m+[0m [0mebs_block_device {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mencrypted[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0miops[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0msnapshot_id[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_id[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_size[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_type[0m[0m           = (known after apply)
+        }
+
+      [32m+[0m [0mephemeral_block_device {
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mno_device[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mvirtual_name[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mnetwork_interface {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_index[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m  = (known after apply)
+        }
+
+      [32m+[0m [0mroot_block_device {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mencrypted[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0miops[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_id[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_size[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_type[0m[0m           = (known after apply)
+        }
+    }
+
+[1m  # module.ec2_instance.aws_network_interface.network_interface[0m will be created[0m[0m
+[0m[32m  +[0m [0mresource "aws_network_interface" "network_interface" {
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns_name[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ips[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ips_count[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msecurity_groups[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0msource_dest_check[0m[0m = true
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m         = "subnet-01b2a7b3c4c8ff2bf"
+
+      [32m+[0m [0mattachment {
+          [32m+[0m [0m[1m[0mattachment_id[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_index[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0minstance[0m[0m      = (known after apply)
+        }
+    }
+
+[1m  # module.ec2_instance.aws_network_interface_attachment.network_interface_attachment[0m will be created[0m[0m
+[0m[32m  +[0m [0mresource "aws_network_interface_attachment" "network_interface_attachment" {
+      [32m+[0m [0m[1m[0mattachment_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mdevice_index[0m[0m         = 0
+      [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0minstance_id[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mstatus[0m[0m               = (known after apply)
+    }
+
+[1m  # module.generic_vpc.aws_vpc.this[0m will be [1m[31mdestroyed[0m[0m
+[0m[31m  -[0m [0mresource "aws_vpc" "this" {
+      [31m-[0m [0m[1m[0marn[0m[0m                              = "arn:aws:ec2:eu-west-2:453835216981:vpc/vpc-0a4cf6f78bfa9bee4" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massign_generated_ipv6_cidr_block[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcidr_block[0m[0m                       = "10.70.0.0/16" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdefault_network_acl_id[0m[0m           = "acl-025760c54f4525884" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdefault_route_table_id[0m[0m           = "rtb-0cabe287d4081754b" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdefault_security_group_id[0m[0m        = "sg-0ddb3e67173ce5e7e" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mdhcp_options_id[0m[0m                  = "dopt-d1b5f1b9" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_dns_hostnames[0m[0m             = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0menable_dns_support[0m[0m               = true [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                               = "vpc-0a4cf6f78bfa9bee4" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0minstance_tenancy[0m[0m                 = "default" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmain_route_table_id[0m[0m              = "rtb-0cabe287d4081754b" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m                         = "453835216981" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                             = {
+          [31m-[0m [0m"Description" = "Automation Services"
+          [31m-[0m [0m"Name"        = "Core VPC"
+        } [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.generic_vpc.module.primary_subnet.aws_subnet.this[0m will be [1m[31mdestroyed[0m[0m
+[0m[31m  -[0m [0mresource "aws_subnet" "this" {
+      [31m-[0m [0m[1m[0marn[0m[0m                             = "arn:aws:ec2:eu-west-2:453835216981:subnet/subnet-04bb34261e49dfe32" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m               = "eu-west-2c" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone_id[0m[0m            = "euw2-az1" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcidr_block[0m[0m                      = "10.70.1.0/24" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                              = "subnet-04bb34261e49dfe32" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m         = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m                        = "453835216981" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                            = {
+          [31m-[0m [0m"Name"       = "Public"
+          [31m-[0m [0m"environent" = "Development"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                          = "vpc-0a4cf6f78bfa9bee4" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[1m  # module.generic_vpc.module.secondary_subnet.aws_subnet.this[0m will be [1m[31mdestroyed[0m[0m
+[0m[31m  -[0m [0mresource "aws_subnet" "this" {
+      [31m-[0m [0m[1m[0marn[0m[0m                             = "arn:aws:ec2:eu-west-2:453835216981:subnet/subnet-01b2a7b3c4c8ff2bf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone[0m[0m               = "eu-west-2c" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mavailability_zone_id[0m[0m            = "euw2-az1" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mcidr_block[0m[0m                      = "10.70.2.0/24" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mid[0m[0m                              = "subnet-01b2a7b3c4c8ff2bf" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m         = false [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mowner_id[0m[0m                        = "453835216981" [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mtags[0m[0m                            = {
+          [31m-[0m [0m"Name"       = "Private"
+          [31m-[0m [0m"environent" = "Development"
+        } [90m->[0m [0m[90mnull[0m[0m
+      [31m-[0m [0m[1m[0mvpc_id[0m[0m                          = "vpc-0a4cf6f78bfa9bee4" [90m->[0m [0m[90mnull[0m[0m
+    }
+
+[0m[1mPlan:[0m 3 to add, 0 to change, 3 to destroy.[0m
+
+------------------------------------------------------------------------
+
+This plan was saved to: plan
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "plan"
+
