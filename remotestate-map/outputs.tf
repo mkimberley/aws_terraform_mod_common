@@ -1,9 +1,12 @@
-output "frontend_subnet" {
-    value ="${local.frontend_subnet}"
+output "public_subnets" {
+    value ="${local.public_subnets}"
 }
-output "backend_subnet" {
-    value ="${local.backend_subnet}"
+output "private_subnets" {
+    value ="${local.private_subnets}"
 }
-output "allzone_subnet" {
-    value ="${local.allzone_subnet}"
+#output "allzone_subnet" {
+#    value ="${local.allzone_subnet}"
+#}
+output "vpc_id" {
+    value = "${local.vpc_id}"
 }

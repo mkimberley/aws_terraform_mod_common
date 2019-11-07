@@ -9,9 +9,10 @@ data "terraform_remote_state" "vpc" {
     }
 }
 locals {
-    vpc_primary_subnet_map      = "${data.terraform_remote_state.vpc.outputs.primary_subnets_map}"
-    vpc_secondary_subnet_map    = "${data.terraform_remote_state.vpc.outputs.secondary_subnets_map}"
-    frontend_subnet             = "${data.terraform_remote_state.vpc.outputs.primary_subnets_map}"
-    backend_subnet              = "${data.terraform_remote_state.vpc.outputs.backend_subnet_id}"
-    allzone_subnet              = "${merge(local.frontend_subnet, local.backend_subnet)}"
+    vpc_public_subnet_map      = "${data.terraform_remote_state.vpc.outputs.public_subnets}"
+    vpc_private_subnet_map     = "${data.terraform_remote_state.vpc.outputs.private_subnets}"
+    public_subnets              = "${data.terraform_remote_state.vpc.outputs.private_subnets}"
+    private_subnets             = "${data.terraform_remote_state.vpc.outputs.public_subnets}"
+    #allzone_subnet             = "${merge(local.public_subnet, local.private_subnet)}"
+    vpc_id                     = "${data.terraform_remote_state.vpc.outputs.core_vpc_id}"
 }

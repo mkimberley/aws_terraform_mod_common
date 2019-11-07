@@ -23,6 +23,6 @@ variable "secgrp_environment" {
     default = "production"
 }
 
-variable "security_group_rule_definition" {
+variable "security_group_rules" {
     default = []
 }

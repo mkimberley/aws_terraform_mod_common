@@ -19,7 +19,6 @@ variable "description" {
 variable "ami_search_name" {
   default = ""
 }
-
 variable "security_group_rules" {
     default = []
   
