@@ -16,8 +16,6 @@ module "ami_search" {
   source                      = "../../aws/ami"
   ami_search_name             = "${var.ami_search_name}"
 }
-
-
 resource "aws_network_interface" "network_interface" {
   subnet_id             = "${module.environment.private_subnets[0]}"
   security_groups       = ["${module.network_interface_security_group.secgrp_id}"]
@@ -33,4 +31,9 @@ resource "aws_instance" "this" {
   instance_type       = "${var.instance_type}"
   subnet_id           = "${module.environment.private_subnets[0]}"
   tags = "${module.tag.all_tags}"
+
+  network_interface {
+    network_interface_id = "${aws_network_interface.network_interface.id}"
+    device_index = 0
+  }
 }
