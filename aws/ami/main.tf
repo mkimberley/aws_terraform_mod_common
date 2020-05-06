@@ -1,3 +1,4 @@
+
 data "aws_ami" "search" {
   count             = "${length(var.ami_search_name) > 0 ? 1 : 0}"
   

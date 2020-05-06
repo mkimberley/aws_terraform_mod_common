@@ -4,9 +4,6 @@ output "public_subnets" {
 output "private_subnets" {
     value ="${local.private_subnets}"
 }
-#output "allzone_subnet" {
-#    value ="${local.allzone_subnet}"
-#}
 output "vpc_id" {
     value = "${local.vpc_id}"
 }

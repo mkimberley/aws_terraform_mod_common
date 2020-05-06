@@ -1,4 +1,3 @@
-
 variable "rttbl_name" {
     default = "default route table name"
 }

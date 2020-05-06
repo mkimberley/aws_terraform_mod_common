@@ -1,10 +1,13 @@
+
 ec2_instance_name       = "ec2_example"
 instance_type           = "t2.small"
 environment             = "development"
 ec2_subnet_name         = "Private"
-description             = "Example RedHat EL 8 EC2 Instance"
-ami_name                = "test-ami"
-security_group_rules     = [
+description             = "Example CentOS 7 EC2 Instance"
+ec2_az                  = "eu-west-2a"
+ami_name                = "CentOS-7-1805*"
+
+security_group_rules    = [
 {
     type            = "ingress"
     description     = "SSH Admin Access"

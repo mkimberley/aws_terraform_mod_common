@@ -16,17 +16,17 @@ variable "vpc_enable_dns_hostnames" {
 variable "vpc_enable_dns_support" {
     default = true
 }
-variable "vpc_primary_cidr" {
+variable "vpc_primary_sub_cidr" {
     default = "10.60.0.0/24"
 }
-variable "vpc_secondary_cidr" {
+variable "vpc_secondary_sub_cidr" {
     default = "10.61.0.0/24"
 }
 variable "vpc_primary_az" {
-    default = "euw2-az1"
+    default = ["eu-west-2a"]
 }
 variable "vpc_secondary_az" {
-    default = "euw2-az2"
+    default = ["eu-west-2a"]
 }
 variable "vpc_tags" {
     type = "map"
@@ -38,9 +38,12 @@ variable "vpc_primary_subnet_name" {
 variable "vpc_secondary_subnet_name" {
     default = "VPC Secondary Subnet"
 }
-variable "vpc_secondary_public_ip_on_lauch" {
+variable "vpc_secondary_public_ip_on_launch" {
     default = "false"
 }
-variable "vpc_primary_public_ip_on_lauch" {
+variable "vpc_primary_public_ip_on_launch" {
     default = "false"
+}
+variable "nat_subnet" {
+    default = ""
 }
