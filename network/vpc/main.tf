@@ -87,6 +87,12 @@ resource "aws_route" "public_internet_gateway" {
   }
 }
 
+resource "aws_route_table_association" "primary" {
+  count = length(module.primary_subnet.sub_id)
+
+  subnet_id      = element(module.primary_subnet.sub_id, count.index)
+  route_table_id = aws_route_table.primary[0].id
+}
 ###################
 # Secondary Routes
 ###################

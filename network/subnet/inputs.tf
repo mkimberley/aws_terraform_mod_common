@@ -18,16 +18,13 @@ variable "sub_name" {
     default = "Subnet"
 }
 variable "sub_tags" {
-    type = "map"
     default = {}
 }
 variable "sub_azs" {
     description = "A list of AZs"
-    type        = list(string)
     default = ["eu-west-2a", "eu-west-2b", "eu-west-2c"]
 }
 variable "subnets" {
     description = "A list of subnets"
-    type        = list(string)
     default     = []
 }
