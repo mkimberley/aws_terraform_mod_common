@@ -29,7 +29,7 @@ variable "vpc_secondary_az" {
     default = ["eu-west-2a"]
 }
 variable "vpc_tags" {
-    type = "map"
+    type = map(string)
     default = {}
 }
 variable "vpc_primary_subnet_name" {

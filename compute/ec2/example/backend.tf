@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "bamaluztfstate"
-    key    = "production/ec2_example/terraform.tfstate"
+    bucket = "somebucketforec2"
+    key    = "core/poc/ec2_test/terraform.tfstate"
     region = "eu-west-2"
   }
 }
