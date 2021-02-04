@@ -94,3 +94,11 @@ variable "volume_tags" {
   type        = map(string)
   default     = {}
 }
+variable "remote_aws_key" {
+  description = "Remote AWS S3 Bucket key"
+  type        = string
+}
+variable "remote_aws_bucket" {
+  description = "Remote S3 bucket name"
+  type        = string
+}

@@ -7,6 +7,9 @@ description             = "Example CentOS 7 EC2 Instance"
 ec2_az                  = "eu-west-2a"
 ami_name                = "CentOS-7-1805*"
 
+remote_aws_bucket       = "mkimberleytfstate"                       #Remote backend for network configuration
+remote_aws_key          = "sandbox/poc/terraform.tfstate"           #Remote backend for network configuration
+
 security_group_rules    = [
 {
     type            = "ingress"

@@ -4,6 +4,8 @@ provider "aws" {
 module "env_subnet" {
   source                      = "../../../aws/remotestate-map"
   subnet_search               = var.ec2_subnet_name
+  aws_key                     = var.remote_aws_key
+  aws_bucket                  = var.remote_aws_bucket
 }
 
 resource "aws_network_interface" "this" {
@@ -16,9 +18,15 @@ module "ec2_instance" {
   source                    = "../"
   
   instance_count            = 3
-  ec2_instance_name         = var.ec2_instance_name
-  ami_search_name           = var.ami_name
-  instance_type             = var.instance_type
+  ec2_instance_name        = var.ec2_instance_name
+  instance_type            = var.instance_type
+  ec2_instance_environment = var.environment
+  description              = var.description
+  ami_search_name          = var.ami_name
+  ec2_subnet_name          = var.ec2_subnet_name
+  security_group_rules     = var.security_group_rules
+  remote_aws_key           = var.remote_aws_key
+  remote_aws_bucket        = var.remote_aws_bucket
 
   associate_public_ip_address = false
 
@@ -55,13 +63,19 @@ module "ec2_with_network_interface" {
 
   ec2_instance_name           = "example-network"
   ami_search_name             = var.ami_name
-  instance_type               = "t2.medium"
+  instance_type               = var.instance_type
+  ec2_instance_environment    = var.environment
+  description                 = var.description
+  ec2_subnet_name             = var.ec2_subnet_name
+  security_group_rules        = var.security_group_rules
+  remote_aws_key              = var.remote_aws_key
+  remote_aws_bucket           = var.remote_aws_bucket
 
   network_interface = [
     {
-      device_index          = 0
-      network_interface_id  = aws_network_interface.this[0].id
-      delete_on_termination = false
+      device_index            = 0
+      network_interface_id    = aws_network_interface.this[0].id
+      delete_on_termination   = false
     }
   ]
 }

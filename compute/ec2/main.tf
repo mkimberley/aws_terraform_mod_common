@@ -3,6 +3,8 @@
 module "environment" {
   source                      = "../../aws/remotestate-map"
   subnet_search               = var.ec2_subnet_name
+  aws_key                     = var.remote_aws_key
+  aws_bucket                  = var.remote_aws_bucket
 }
 module "tags" {
   source                      = "../../aws/tags"
