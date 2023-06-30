@@ -1,8 +1,8 @@
 locals {
-  tags = map(
-    "Name", var.sub_name,
-    "environent",var.sub_environment
-  )
+  tags = tomap({
+    "Name" = var.sub_name,
+    "environent" = var.sub_environment
+  })
 }
 
 resource "aws_subnet" "this" {
